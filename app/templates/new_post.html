@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}
+    {% if title %}
+    <title>{{ title }}- blogger</title>
+    {% else %}
+    <p>Blogger</p>
+    {% endif %}
+{% endblock %}
+{% block content %}
+    <form action="" method="POST" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label }} <br>
+            {{ form.username(size=32) }}
+        </p>
+        <p>
+            {{ form.post.label }} <br>
+            {{ form.post(size=120) }}
+        </p>
+        <p>
+            {{ form.submit() }}
+        </p>
+    </form>
+{% endblock %}

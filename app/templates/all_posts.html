@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+    {% if title %}
+        <title>{{ title }}- blogger</title>
+    {% else %}
+    <p>Blogger</p>
+        {% endif %}
+{% endblock %}
+
+{% block content %} 
+    <h2>Published Posts.</h2>
+    {% for post in posts %}
+        <b>{{ post.username }}</b>
+        <p>{{ post.post }}</p>
+    {% endfor %}
+{% endblock %}
